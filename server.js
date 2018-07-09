@@ -22,4 +22,5 @@ app.get('/', (req, res) => { res.render('home.hbs', { pageTitle: 'Welcome',
                                                       message: 'Welcome to express server'}) });
 app.get('/about', (req, res) => res.render('about.hbs', { pageTitle: 'about '}));
 app.get('/bad', (req, res) => res.send( { errorMessage: 'bad request'}));
+app.get('/projects', (req, res) => res.render('projects.hbs', { pageTitle: 'Projects '}));
 app.listen(port, () => console.log(`server is up and running on port ${port}`));
