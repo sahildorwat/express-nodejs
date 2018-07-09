@@ -1,7 +1,7 @@
 const fs = require('fs');
 const express = require('express');
 const hbs = require('hbs');
-
+const port = process.env.PORT || 3000;
 var app = express();
 app.set('view engine', 'hbs');
 
@@ -22,4 +22,4 @@ app.get('/', (req, res) => { res.render('home.hbs', { pageTitle: 'Welcome',
                                                       message: 'Welcome to express server'}) });
 app.get('/about', (req, res) => res.render('about.hbs', { pageTitle: 'about '}));
 app.get('/bad', (req, res) => res.send( { errorMessage: 'bad request'}));
-app.listen(3000, () => console.log('server is up and running on port 3000'));
+app.listen(port, () => console.log(`server is up and running on port ${port}`));
